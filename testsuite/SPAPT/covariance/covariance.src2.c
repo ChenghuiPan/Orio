@@ -117,15 +117,14 @@ transform Composite(
     {
       mean[j] = 0.0;
       for (i = 1; i <= n; i++)
-        mean[j] += data[i][j];
+        mean[j] += data[j][i];
       mean[j] /= float_n;
     }
 
 
   for (i = 1; i <= n; i++)
     for (j = 1; j <= m; j++)
-      data[i][j] -= mean[j];
-
+      data[j][i] -= mean[j];
 
 transform Composite(
     tile = [('i',T2_I,'ii'),('j',T2_J,'jj'),('k',T2_K,'kk'),
@@ -143,11 +142,10 @@ transform Composite(
 	{
 	  symmat[k][j] = 0.0;
 	  for (i = 1; i <= n; i++)
-	    symmat[k][j] += (data[i][k] * data[i][j]);
+	    symmat[k][j] += (data[k][i] * data[j][i]);
 	  symmat[j][k] = symmat[k][j];
 	}
     }
-
 
 
 ) @*/

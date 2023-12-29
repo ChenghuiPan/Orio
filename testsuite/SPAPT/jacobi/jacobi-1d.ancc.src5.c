@@ -46,7 +46,7 @@
   def search  
   {
     arg algorithm = 'Randomsearch';  
-    arg total_runs = 100; 
+    arg total_runs = 10000; 
   }
 ) @*/  
 
@@ -63,7 +63,7 @@ transform Composite(
       tile = [('i',T2_I,'ii'),('j',T2_J,'jj'),
              (('ii','i'),T2_Ia,'iii'),(('jj','j'),T2_Ja,'jjj')],
       unrolljam = (['i','j'],[U2_I,U2_J]),
-      regtile = (['i','j'],[RT2_I,RT2_J]),
+      regtile = (['i','j'],[RT2_I,RT2_J])
 )
 for (i=1; i<=T-1; i++) 
   for (j=1; j<=N-2; j++) 

@@ -92,7 +92,7 @@ int iii, jjj, kkk;
 /*@ begin Loop(
 
 transform Composite(
-  unrolljam = (['i'],[U1_I]),
+  unrolljam = (['i'],[U1_I])
 )
 for (i=0;i<=n-1;i++) {
   x[i]=0;
@@ -104,7 +104,7 @@ transform Composite(
     tile = [('j',T2_J,'jj'),('i',T2_I,'ii'),
             (('jj','j'),T2_Ja,'jjj'),(('ii','i'),T2_Ia,'iii')],
     unrolljam = (['j','i'],[U2_J,U2_I]),
-    regtile = (['j','i'],[RT2_J,RT2_I]),
+    regtile = (['j','i'],[RT2_J,RT2_I])
 )
 for (j=0;j<=n-1;j++) {
   for (i=0;i<=n-1;i++) {
@@ -114,7 +114,7 @@ for (j=0;j<=n-1;j++) {
  }
 
 transform Composite(
-  unrolljam = (['i'],[U3_I]),
+  unrolljam = (['i'],[U3_I])
 )
 for (i=0;i<=n-1;i++) {
   x[i]=b*x[i]+z[i];
@@ -125,7 +125,7 @@ transform Composite(
     tile = [('i',T4_I,'ii'),('j',T4_J,'jj'),
             (('ii','i'),T4_Ia,'iii'),(('jj','j'),T4_Ja,'jjj')],
     unrolljam = (['i','j'],[U4_J,U4_I]),
-    regtile = (['i','j'],[RT4_I,RT4_J]),
+    regtile = (['i','j'],[RT4_I,RT4_J])
 )
 for (i = 0; i <= n-1; i++) {
   for (j = 0; j <= n-1; j++) {

@@ -128,6 +128,10 @@
   decl double eps = 0.005;
   }
 
+  def validation {
+    arg validation_file = 'validation.c';
+  }
+
 ) @*/   
 
 

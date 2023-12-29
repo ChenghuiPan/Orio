@@ -77,7 +77,7 @@ transform Composite(
     tile = [('t',T1_T,'tt'),('i',T1_I,'ii'),('j',T1_J,'jj'),
             (('tt','t'),T1_Ta,'ttt'),(('ii','i'),T1_Ia,'iii'),(('jj','j'),T1_Ja,'jjj')],
     unrolljam = (['t','i','j'],[U1_T,U1_I,U1_J]),
-    regtile = (['t','i','j'],[RT1_T,RT1_I,RT1_J]),
+    regtile = (['t','i','j'],[RT1_T,RT1_I,RT1_J])
 )
 
 for (t=0; t<=T-1; t++)

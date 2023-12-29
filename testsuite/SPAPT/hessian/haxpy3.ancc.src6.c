@@ -10,11 +10,6 @@
   {
     arg repetitions = 35;
   }
-  
-
-  let RANGE = 8000;
-  let BSIZE = 512*32;
-
 
   def performance_params
   {
@@ -35,13 +30,6 @@
 
 
 
-
-                              (T_I if T_I>1 else 5000)*(T_J if T_J>1 else 5000) <= BSIZE));
-                               (T_I if T_I>1 else 5000)*(T_J if T_J>1 else 5000) <= BSIZE));
-                               (T_I if T_I>1 else 5000)*(T_J if T_J>1 else 5000) <= BSIZE));
-                               (T_I if T_I>1 else 5000)*(T_J if T_J>1 else 5000) <= BSIZE));
-    
-
   }
 
   def search
@@ -52,7 +40,8 @@
   
   def input_params
   {
-    
+    let RANGE = 8000;
+    let BSIZE = 512*32;
     param SIZE = RANGE;
     param N = RANGE;
   }            
@@ -89,9 +78,6 @@ int i,j,ii,jj,iii,jjj,it,jt;
 /*@ begin Loop(
   transform Composite(
     tile = [('i',T_I,'ii'),('j',T_J,'jj')],
-               (ACOPY_X0,'X0[i][j]',[(T_I if T_I>1 else 5000),(T_J if T_J>1 else 5000)],'_copy'),
-               (ACOPY_X1,'X1[i][j]',[(T_I if T_I>1 else 5000),(T_J if T_J>1 else 5000)],'_copy'),
-               (ACOPY_X2,'X2[i][j]',[(T_I if T_I>1 else 5000),(T_J if T_J>1 else 5000)],'_copy')],
     unrolljam = (['i','j'],[U_I,U_J]),
     regtile = (['i','j'],[RT_I,RT_J])
 )

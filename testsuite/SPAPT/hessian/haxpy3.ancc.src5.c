@@ -10,10 +10,6 @@
   {
     arg repetitions = 35;
   }
-  
-  let RANGE = 4000;
-  let BSIZE = 512*32;
-
 
   def performance_params
   {
@@ -29,12 +25,6 @@
 
     param U_I[] = range(1,31);
     param U_J[] = range(1,31);
-
-
-
-
-
-
   }
 
   def search
@@ -45,6 +35,8 @@
   
   def input_params
   {
+    let RANGE = 4000;
+    let BSIZE = 512*32;
     param SIZE = RANGE;
     param N = RANGE;
   }            

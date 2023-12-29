@@ -40,7 +40,10 @@ def setup(version, reps, search, maxruns):
     #massedit.edit_files(filenames, ["re.sub(r'gcc -O3 -fopenmp ','icc -O3 -mtune=%s -xCORE-AVX512 -qopt-zmm-usage=high -qopenmp ' % icc_arch, line)"], dry_run=False)
     massedit.edit_files(filenames, ["re.sub(r'arg repetitions = 35;', 'arg repetitions = %d;', line)" % reps], dry_run=False)
     massedit.edit_files(filenames, ["re.sub(r\"arg algorithm = 'Randomsearch';\", \"arg algorithm = '%s';\", line)" % search], dry_run=False)
+    massedit.edit_files(filenames, ["re.sub(r'arg total_runs = 100000;', 'arg total_runs = %d;', line)" % maxruns], dry_run=False)
     massedit.edit_files(filenames, ["re.sub(r'arg total_runs = 10000;', 'arg total_runs = %d;', line)" % maxruns], dry_run=False)
+    massedit.edit_files(filenames, ["re.sub(r'arg total_runs = 1000;', 'arg total_runs = %d;', line)" % maxruns], dry_run=False)
+    massedit.edit_files(filenames, ["re.sub(r'arg total_runs = 100;', 'arg total_runs = %d;', line)" % maxruns], dry_run=False)
 
 def run(dry_run=True):
     outdir = timestamp()
@@ -85,10 +88,10 @@ def run(dry_run=True):
                         print('\n<<=====>> Already autotuned, results in %s/%s\n' % (kernel_dir,archivedir))
                         continue
                     # dispatch to Orio's main
-                    #orio.main.orio_main.start(['orcc','-vk',input_file], orio.main.orio_main.C_CPP)
-                    x = threading.Thread(target=orio.main.orio_main.start, args=(['orcc','-vk',input_file], orio.main.orio_main.C_CPP))
-                    x.start()
-                    x.join()   # timeout not specified
+                    orio.main.orio_main.start(['orcc','-vk',input_file], orio.main.orio_main.C_CPP)
+                    #x = threading.Thread(target=orio.main.orio_main.start, args=(['orcc','-vk',input_file], orio.main.orio_main.C_CPP))
+                    #x.start()
+                    #x.join()   # timeout not specified
                     archivedir = ('archive-%s' % input_file)[:-2] # strip the *.c suffix from backup dir
                     if not os.path.exists(archivedir): os.mkdir(archivedir)
                     print('mv _*.c tuning*.log %s' % archivedir)

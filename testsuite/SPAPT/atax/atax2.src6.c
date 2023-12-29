@@ -21,6 +21,7 @@
     param T2_K[] = [1,64,128,256,512,1024,2048];
 
     # Array copy
+    param ACOPY_x[] = [False,True];
 
     # Unroll-jam
     param U1_I[] = range(1,31);

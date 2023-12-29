@@ -1,7 +1,7 @@
 
 int isValid() {
   
-  double actual = 2793016550086296.5; // or some other user-defined computation
+  double actual = 2776612406997686.000000; // or some other user-defined computation
   double ex_sum = 0.0;
   double ey_sum = 0.0;
   double hz_sum = 0.0;
@@ -11,7 +11,7 @@ int isValid() {
   double diff=0.0;
 
   for (i1=0; i1<nx; i1++)
-    for (i2=0; i2<ny +1; i2++){
+    for (i2=0; i2<ny; i2++){
     ex_sum+=ex[i1][i2]*rand1*rand2;
     ey_sum+=ey[i1][i2]*rand1*rand2;
     hz_sum+=hz[i1][i2]*rand1*rand2;

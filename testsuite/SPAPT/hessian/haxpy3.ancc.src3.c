@@ -10,11 +10,6 @@
   {
     arg repetitions = 35;
   }
-  
-
-  let RANGE = 8000;
-  let BSIZE = 512*32;
-
 
   def performance_params
   {
@@ -66,7 +61,8 @@
   
   def input_params
   {
-    
+    let RANGE = 8000;
+    let BSIZE = 512*32;
     param SIZE = RANGE;
     param N = RANGE;
   }            

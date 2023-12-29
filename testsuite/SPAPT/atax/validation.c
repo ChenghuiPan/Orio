@@ -16,10 +16,17 @@ int isValid() {
 
   diff=abs(expected-actual);
 
-  fprintf(stderr,"expected=%f\n",expected);
-  fprintf(stderr,"actual=%f\n",actual);
+  //fprintf(stderr,"expected=%f\n",expected);
+  //fprintf(stderr,"actual=%f\n",actual);
   //printf("diff=%f\n",diff);
   //printf("diff=%d\n",(diff < 0.00000001));
+#ifdef ORIGINAL
+  FILE *fp = fopen("origexec.out", "w");
+#else
+  FILE *fp = fopen("newexec.out", "w");
+#endif
+  fprintf(fp, "%lf\n", expected);
+  fclose(fp);
 
   if (diff < 0.00000001)
     return 1;
