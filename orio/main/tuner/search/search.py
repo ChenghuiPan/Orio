@@ -269,9 +269,8 @@ class Search:
             transformed_code, _, externals = transformed_code_seq[0]
             validation_map['original'] = (transformed_code, externals)
             instrumented_code = self.ptcodegen.generate(validation_map)
-            _ = self.ptdriver.run(instrumented_code)
+            _ = self.ptdriver.run(instrumented_code, perf_params)
             Globals().executedOriginal = True
-        
         # get the transformed code for each corresponding coordinate for non-command-line parameters
         code_map = {}
         transformed_code_seq = []

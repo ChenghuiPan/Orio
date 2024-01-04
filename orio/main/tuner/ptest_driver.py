@@ -259,6 +259,11 @@ class PerfTestDriver:
             if status:
                 err('orio.main.tuner.ptest_driver:  failed to compile the original version of the code: "%s"' % cmd)
 
+            info(' running the original code:\n\t' + cmd)
+            status = os.system('./%s' % self.original_exe_name)
+            if status:
+                err('orio.main.tuner.ptest_driver:  failed to run the original version of the code: "%s"' % cmd)
+
         # compile the test code
         if self.language == 'cuda':
             cmd = ('%s %s -o %s -c %s' % (build_cmd, self.extra_compiler_opts, self.obj_name, self.src_name))

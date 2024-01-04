@@ -163,6 +163,7 @@ class Randomsearch(orio.main.tuner.search.search.Search):
             runs += 1
 
             perf_costs={}
+            #perf_costs = self.getPerfCosts([coord])
             try:
                 perf_costs = self.getPerfCosts([coord])
             except Exception as e:
@@ -306,6 +307,7 @@ class Randomsearch(orio.main.tuner.search.search.Search):
             # determine the performance cost of all chosen coordinates
             #perf_costs = self.getPerfCosts(coords)
             #sys.exit()
+            #perf_costs = self.getPerfCosts(coords)
             try:
                 perf_costs = self.getPerfCosts(coords)
             except Exception as e:
