@@ -63,6 +63,15 @@
     arg decl_file = 'decl_code.h';
     arg init_file = 'init_code.c';
  }
+
+
+  def validation {
+
+    arg validation_file = 'validation.c';
+
+  }
+
+
 ) @*/ 
 
 

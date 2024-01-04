@@ -284,7 +284,12 @@ class PerfTestDriver:
 
         start = time.time()
         # TODO: log all commands
-        status = os.system(cmd)
+        #status = os.system(cmd)
+        if Globals().compile_timeout != 0:
+            status = sp.check_output(cmd, shell=True, timeout=Globals().compile_timeout)
+        else:
+            status = os.system(cmd)
+
         elapsed = time.time() - start
         if coord is not None:
             self.compile_time[coord] = elapsed

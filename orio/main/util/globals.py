@@ -26,6 +26,7 @@ class Globals:
             self.metadata = {'loop_transformations':[]}
             self.counter = 0
             self.cmdline = cmdline
+            self.compile_timeout = 0
 
             # TODO -- these do not belong here, need to be in a module
             self.funcDec = ''           #Added by Axel Y. Rivera (UofU)
@@ -72,8 +73,9 @@ class Globals:
             else:
                 self.configfile = ''
 
-                
-                
+            if 'compile_timeout' in list(cmdline.keys()):
+                self.compile_timeout = int(cmdline['compile_timeout'])
+
             if 'out_prefix' in list(cmdline.keys()):
                 self.out_prefix = cmdline['out_prefix']
             else:

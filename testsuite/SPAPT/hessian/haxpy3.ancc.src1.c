@@ -73,6 +73,16 @@
   }            
 
 
+  def validation {
+
+    arg validation_file = 'validation.c';
+
+  }
+
+
+
+
+
 ) @*/
 
 int i,j,ii,jj,iii,jjj,it,jt;

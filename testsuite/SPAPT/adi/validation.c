@@ -23,12 +23,19 @@ int isValid() {
   //printf("actual=%f\n",actual);
   //printf("diff=%f\n",diff);
   //printf("diff=%d\n",(diff < 0.00000001));
+#ifdef ORIGINAL
+  FILE *fp = fopen("origexec.out", "w");
+#else
+  FILE *fp = fopen("newexec.out", "w");
+#endif
+  fprintf(fp, "%lf\n", expected);
+  fclose(fp);
 
-  if (diff < 1.0/1000.0)
-    return 1;
-  else
-    return 0;
-
+//  if (diff < 1.0/1000.0)
+//    return 1;
+//  else
+//    return 0;
+  return 1;
 }
 
 

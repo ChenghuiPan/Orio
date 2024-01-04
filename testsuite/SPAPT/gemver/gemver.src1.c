@@ -90,6 +90,17 @@
   arg decl_file = 'decl.h';
   arg init_file = 'init.c';
   }
+
+
+  def validation {
+
+    arg validation_file = 'validation.c';
+
+  }
+
+
+
+
 ) @*/
 
 #define max(x,y)    ((x) > (y)? (x) : (y))
