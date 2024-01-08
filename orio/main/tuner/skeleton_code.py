@@ -43,7 +43,7 @@ double getClock() {
   return((double) hack.ull );
 }
 #else
-#if !defined(__APPLE__) && !defined(_OPENMP)
+#if !defined(_OPENMP)
 double getClock() {
     struct timespec ts;
     if (clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts) != 0) return -1;
